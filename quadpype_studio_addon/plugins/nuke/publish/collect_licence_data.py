@@ -12,9 +12,15 @@ class CollectLicenseData(pyblish.api.InstancePlugin):
     hosts = ["nuke"]
     label = "Collect License Data"
     order = pyblish.api.CollectorOrder + 0.4990
+    optional = True
+    rlm_path = os.getenv("RLMUTIL_EXEC")
+    if not rlm_path:
+        logging.error(
+            "Please set the RLMUTIL_EXEC environment variable to the path of "
+            "your rlmutil executable in your Nuke environment."
+        )
+        raise RuntimeError("RLMUTIL_EXEC environment variable is not set.")
 
-    # TODO: avoid hardcoded path
-    rlm_path = "/prod/softprod/tools/linux/rlmutil"
     # Match with server address
     foundry_licence_regex_result = re.search(r':(\d+@[\w.]+)', os.environ.get("foundry_LICENSE", ""))
     foundry_licence = foundry_licence_regex_result.group(1) if foundry_licence_regex_result else None
