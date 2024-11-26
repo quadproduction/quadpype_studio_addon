@@ -1,9 +1,9 @@
 # This module has been backup because it also load in others DCC and
 # it is not used anymore.
 
-from openpype.client import get_asset_by_name
-from openpype.pipeline import CreatedInstance
-from openpype.hosts.tvpaint.api.plugin import TVPaintAutoCreator
+from quadpype.client import get_asset_by_name
+from quadpype.pipeline import CreatedInstance
+from quadpype.hosts.tvpaint.api.plugin import TVPaintAutoCreator
 
 
 class TVPaintJsonCreator(TVPaintAutoCreator):

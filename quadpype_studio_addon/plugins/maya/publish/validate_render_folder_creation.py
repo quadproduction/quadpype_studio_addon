@@ -1,5 +1,5 @@
 from pyblish import api
-from openpype.pipeline.publish import ValidateContentsOrder
+from quadpype.pipeline.publish import ValidateContentsOrder
 import os
 import copy
 

@@ -1,20 +1,10 @@
 """Load an asset in Blender from an Alembic file."""
 
-from pathlib import Path
-from pprint import pformat
 from typing import Dict, List, Optional
-
+from quadpype.hosts.blender.api import plugin, lib
 import bpy
 
-from openpype.pipeline import (
-    get_representation_path,
-    AVALON_CONTAINER_ID,
-)
-from openpype.hosts.blender.api import plugin, lib
-from openpype.hosts.blender.api.pipeline import (
-    AVALON_CONTAINERS,
-    AVALON_PROPERTY,
-)
+
 def blender_camera_bg_video_importer(video_filepath, replace_last_bg = False):
     """
     Will add or reload an image sequence in the camera background
@@ -40,7 +30,7 @@ def blender_camera_bg_video_importer(video_filepath, replace_last_bg = False):
     print(f"Video at path {imported_video.filepath} has been correctly loaded in scene as camera background.")
 
 
-class ImageVideoLoader(plugin.AssetLoader):
+class ImageVideoLoader(plugin.BlenderLoader):
     """Replace Last Video in Blender in the last imported one.
 
     Create background movie clip for active camera and assign selected video.
@@ -69,7 +59,7 @@ class ImageVideoLoader(plugin.AssetLoader):
         blender_camera_bg_video_importer(video_filepath, replace_last_bg=True)
 
 
-class ImageVideoAdder(plugin.AssetLoader):
+class ImageVideoAdder(plugin.BlenderLoader):
     """Add Video in Blender.
 
     Add background movie clip for active camera and assign selected video.

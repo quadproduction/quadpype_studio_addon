@@ -1,20 +1,9 @@
 """Load an asset in Blender from an Alembic file."""
 
-from pathlib import Path
-from pprint import pformat
 from typing import Dict, List, Optional
 
 import bpy
-
-from openpype.pipeline import (
-    get_representation_path,
-    AVALON_CONTAINER_ID,
-)
-from openpype.hosts.blender.api import plugin, lib
-from openpype.hosts.blender.api.pipeline import (
-    AVALON_CONTAINERS,
-    AVALON_PROPERTY,
-)
+from quadpype.hosts.blender.api import plugin, lib
 
 def blender_camera_bg_sequence_importer(image_filepath, context, replace_last_bg = False):
     """
@@ -60,7 +49,7 @@ def blender_camera_bg_sequence_importer(image_filepath, context, replace_last_bg
     print(f"Image sequence at path {imported_image.filepath} has been correctly loaded in scene as camera background.")
 
 
-class ImageSequenceLoader(plugin.AssetLoader):
+class ImageSequenceLoader(plugin.BlenderLoader):
     """Replace Last Image Sequence in Blender in the last imported one.
 
     Create background image sequence for active camera and assign selected images.
@@ -88,7 +77,7 @@ class ImageSequenceLoader(plugin.AssetLoader):
         image_filepath = self.filepath_from_context(context)
         blender_camera_bg_sequence_importer(image_filepath, context, replace_last_bg=True)
 
-class ImageSequenceAdder(plugin.AssetLoader):
+class ImageSequenceAdder(plugin.BlenderLoader):
     """Add Image Sequence in Blender.
 
     Add background image sequence for active camera and assign selected images.

@@ -1,13 +1,13 @@
 import os
 from pathlib import Path
-from openpype.modules import (
-    OpenPypeModule,
+from quadpype.modules import (
+    QuadPypeModule,
     IPluginPaths,
     JsonFilesSettingsDef
 )
 
 
-class QuadPyblishModule(OpenPypeModule, IPluginPaths):
+class QuadPyblishModule(QuadPypeModule, IPluginPaths):
     name = "quadpyblish"
     _valid_plugin_types = ["publish", "load", "create", "actions", "inventory", "builder"]
 

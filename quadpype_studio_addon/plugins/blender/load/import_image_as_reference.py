@@ -1,20 +1,11 @@
 """Load an asset in Blender from an Alembic file."""
 
-from typing import Dict, List, Optional
-
+from typing import Dict, Optional
+from quadpype.hosts.blender.api import plugin, lib
 import bpy
 
-from openpype.pipeline import (
-    get_representation_path,
-    AVALON_CONTAINER_ID,
-)
-from openpype.hosts.blender.api import plugin, lib
-from openpype.hosts.blender.api.pipeline import (
-    AVALON_CONTAINERS,
-    AVALON_PROPERTY,
-)
 
-class ImageReferenceLoader(plugin.AssetLoader):
+class ImageReferenceLoader(plugin.BlenderLoader):
     """Load Image in Blender as reference.
 
     Create image in empty and put it in _REF collection.
@@ -27,11 +18,11 @@ class ImageReferenceLoader(plugin.AssetLoader):
     icon = "calendar-plus-o"
     color = "yellow"
 
-    def process_asset(
-        self, context: dict, name: str, namespace: Optional[str] = None,
-        options: Optional[Dict] = None
-    ) -> Optional[List]:
-    
+    def process_asset(self,
+                      context: dict,
+                      name: str,
+                      namespace: Optional[str] = None,
+                      options: Optional[Dict] = None):
         """
         Arguments:
             name: Use pre-defined name

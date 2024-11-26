@@ -1,10 +1,10 @@
 import pyblish.api
-from openpype.pipeline.publish import (
+from quadpype.pipeline.publish import (
     ValidateContentsOrder,
     PublishXmlValidationError,
     OptionalPyblishPluginMixin
 )
-from openpype.hosts.photoshop import api as photoshop
+from quadpype.hosts.photoshop import api as photoshop
 
 
 class ValidateBlendModeRepair(pyblish.api.Action):

@@ -3,20 +3,20 @@ from maya import cmds
 from collections import defaultdict
 import time
 
-from openpype.hosts.maya.api import lib
-import openpype.hosts.maya.api.plugin
-from openpype.hosts.maya.tools.mayalookassigner import (
+from quadpype.hosts.maya.api import lib
+import quadpype.hosts.maya.api.plugin
+from quadpype.hosts.maya.tools.mayalookassigner import (
     commands,
     vray_proxies,
     arnold_standin
 )
-from openpype.pipeline.context_tools import get_current_project_name
-from openpype.client import get_last_version_by_subset_id
+from quadpype.pipeline.context_tools import get_current_project_name
+from quadpype.client import get_last_version_by_subset_id
 
 log = logging.getLogger(__name__)
 
 
-class ApplyLook(openpype.hosts.maya.api.plugin.ReferenceLoader):
+class ApplyLook(quadpype.hosts.maya.api.plugin.ReferenceLoader):
     families = ["look"]
     representations = ["ma", "mb"]
     hosts = ["maya"]

@@ -2,10 +2,10 @@ import os
 import logging
 import pyblish.api
 
-from openpype.hosts.photoshop import api as photoshop
-from openpype.pipeline import OptionalPyblishPluginMixin
-from openpype.settings import get_project_settings
-from openpype.pipeline.publish import (
+from quadpype.hosts.photoshop import api as photoshop
+from quadpype.pipeline import OptionalPyblishPluginMixin
+from quadpype.settings import get_project_settings
+from quadpype.pipeline.publish import (
     ValidateContentsOrder,
     PublishXmlValidationError  
 )

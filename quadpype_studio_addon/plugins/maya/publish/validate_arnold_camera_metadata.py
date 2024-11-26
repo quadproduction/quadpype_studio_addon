@@ -7,8 +7,8 @@ except ImportError:
     # Because the farm publish function imports every publish file before filtering.
     pass
 
-from openpype.hosts.maya.api import lib
-from openpype.pipeline.publish import (
+from quadpype.hosts.maya.api import lib
+from quadpype.pipeline.publish import (
     ValidateContentsOrder
 )
 

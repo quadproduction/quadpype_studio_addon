@@ -1,30 +1,30 @@
 # QuadPype Studio Add-on
 
-This repository contains a collection of plugins and modules designed for use with QuadPype, an open-source pipeline management tool. These plugins are developed to streamline various actions in the pipeline, such as creating, loading, and publishing steps. The repository also includes a module named **quad_pyblish_module**, which is intended for managing various plugins specifically tailored for OpenPype.
+This repository contains a collection of plugins and modules designed for use with QuadPype, an open-source pipeline management tool. These plugins are developed to streamline various actions in the pipeline, such as creating, loading, and publishing steps. The repository also includes a module named **quad_pyblish_module**, which is intended for managing various plugins specifically tailored for QuadPype.
 
 ## Installation
 
-To use the plugins from this repository. Follow the steps below to install and integrate these plugins into your OpenPype environment:
+To use the plugins from this repository. Follow the steps below to install and integrate these plugins into your QuadPype environment:
 
 1. Clone the repository to your local machine using the following command:
 
   ```git clone https://github.com/quadproduction/quadpype_studio_addon```
 
-2. Locate the OpenPypeAddOn Paths of your OpenPype installation : 
+2. Locate the QuadPypeAddOn Paths of your QuadPype installation : 
 
-  ```OpenPype Settings > System > Modules > OpenPypeAddOn Paths ``` 
-
-
-3. Copy the **quad-plugins** repository directory to the AddOn Path of OpenPype.
+  ```QuadPype Settings > System > Modules > QuadPypeAddOn Paths ``` 
 
 
-4. Now, you should have successfully installed the **quad-plugins** repository and its modules into your OpenPype environment.
+3. Copy the **quad-plugins** repository directory to the AddOn Path of QuadPype.
+
+
+4. Now, you should have successfully installed the **quad-plugins** repository and its modules into your QuadPype environment.
 
 ## quad_pyblish_module
 
-The main module included in this repository is **quad_pyblish_module**. However, please note that the name of this module is subject to change in the future, as it now contains various plugins that are specifically designed for OpenPype. Currently, the module is responsible for managing the following plugins:
+The main module included in this repository is **quad_pyblish_module**. However, please note that the name of this module is subject to change in the future, as it now contains various plugins that are specifically designed for QuadPype. Currently, the module is responsible for managing the following plugins:
 
-- **Actions Plugin:** This plugin provides additional actions within OpenPype, allowing you to perform custom actions during different stages of the pipeline.
+- **Actions Plugin:** This plugin provides additional actions within QuadPype, allowing you to perform custom actions during different stages of the pipeline.
 To use a custom Action plugin, you need to call the module that contains the plugin's class and inherit from the `Action` class. For example, if you have a custom `MyCustomAction` plugin, you can initialize it like this:
 
   ```python
@@ -47,7 +47,7 @@ To use a custom Action plugin, you need to call the module that contains the plu
 - **Create Plugin:** The Create plugin facilitates the creation of new assets within the pipeline. It streamlines the process of initializing new projects or assets.  
 To use a custom Create plugin, you need to call the module that contains the plugin's class and inherit from the `Creator` class. For example, if you have a custom `MyCustomCreator` plugin, you can initialize it like this:
     ```python
-    from openpype.pipeline.create import Creator
+    from quadpype.pipeline.create import Creator
     
     class MyCustomCreator(Creator):
         label = None # Label shown in UI
@@ -55,7 +55,7 @@ To use a custom Create plugin, you need to call the module that contains the plu
         order = 100 # Order in which will be plugin executed (collect & update instances) less == earlier -> Order '90' will be processed before '100'
         enabled = True # Creator is enabled 
         icon = None # Creator (and family) icon may not be used if `get_icon` is reimplemented
-        instance_attr_defs = [] # Instance attribute definitions that can be changed per instance returns list of attribute definitions from `openpype.pipeline.attribute_definitions`
+        instance_attr_defs = [] # Instance attribute definitions that can be changed per instance returns list of attribute definitions from `quadpype.pipeline.attribute_definitions`
         host_name = None # Filtering by host name - can be used to be filtered by host name used on all hosts when set to 'None' for Backwards compatibility was added afterward
         pass
     ```
@@ -64,7 +64,7 @@ To use a custom Create plugin, you need to call the module that contains the plu
 To use a custom Loader plugin, you need to call the module that contains the plugin's class and inherit from the `LoaderPlugin` class. For example, if you have a custom `MyCustomLoader` plugin, you can initialize it like this:
 
   ```python
-  from openpype.pipeline.load import LoaderPlugin
+  from quadpype.pipeline.load import LoaderPlugin
   import qargparse
   
   class MyCustomLoader(LoaderPlugin):

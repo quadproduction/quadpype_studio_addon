@@ -1,20 +1,9 @@
 """Load an asset in Blender from an Alembic file."""
 
-from pathlib import Path
-from pprint import pformat
 from typing import Dict, List, Optional
-
+from quadpype.hosts.blender.api import plugin, lib
 import bpy
 
-from openpype.pipeline import (
-    get_representation_path,
-    AVALON_CONTAINER_ID,
-)
-from openpype.hosts.blender.api import plugin, lib
-from openpype.hosts.blender.api.pipeline import (
-    AVALON_CONTAINERS,
-    AVALON_PROPERTY,
-)
 
 def blender_camera_bg_image_importer(image_filepath, replace_last_bg  = False):
     """
@@ -41,7 +30,7 @@ def blender_camera_bg_image_importer(image_filepath, replace_last_bg  = False):
     print(f"Image at path {imported_image.filepath} has been correctly loaded in scene as camera background.")
 
 
-class ImageCameraLoader(plugin.AssetLoader):
+class ImageCameraLoader(plugin.BlenderLoader):
     """Replace Last Image in Blender as background in camera in the last imported one.
 
     Create background image for active camera and assign selected image.
@@ -70,7 +59,7 @@ class ImageCameraLoader(plugin.AssetLoader):
         blender_camera_bg_image_importer(image_filepath, replace_last_bg =True)
 
 
-class ImageCameraAdder(plugin.AssetLoader):
+class ImageCameraAdder(plugin.BlenderLoader):
     """Add Image in Blender as background in camera.
 
     Create background image for active camera and assign selected image in a new background_images.

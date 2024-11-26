@@ -5,8 +5,8 @@ import tempfile
 import json
 
 import pyblish.api
-from openpype.hosts.tvpaint.api import lib
-from openpype.settings import get_project_settings
+from quadpype.hosts.tvpaint.api import lib
+from quadpype.settings import get_project_settings
 
 
 class ExtractJson(pyblish.api.ContextPlugin):

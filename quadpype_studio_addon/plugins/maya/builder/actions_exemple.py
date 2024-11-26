@@ -1,4 +1,4 @@
-from openpype.hosts.maya.api.plugin import BuilderAction
+from quadpype.hosts.maya.api.plugin import BuilderAction
 
 
 class ActionExemple(BuilderAction):

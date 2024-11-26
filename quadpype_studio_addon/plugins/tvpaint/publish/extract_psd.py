@@ -6,8 +6,8 @@ import tempfile
 from pathlib import Path
 
 import pyblish.api
-from openpype.settings import get_project_settings
-from openpype.hosts.tvpaint.api import lib
+from quadpype.settings import get_project_settings
+from quadpype.hosts.tvpaint.api import lib
 
 
 class ExtractPsd(pyblish.api.InstancePlugin):

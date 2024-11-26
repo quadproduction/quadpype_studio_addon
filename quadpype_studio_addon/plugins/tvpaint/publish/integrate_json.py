@@ -3,7 +3,7 @@ import json
 import shutil
 
 import pyblish.api
-from openpype.settings import get_project_settings
+from quadpype.settings import get_project_settings
 
 
 class IntegrateJson(pyblish.api.ContextPlugin):
