@@ -1,0 +1,45 @@
+{
+    "type": "dict",
+    "key": "quad_custom_settings",
+    "label": "Quad Custom Settings",
+    "collapsible": true,
+    "children": [
+        {
+            "type": "dict",
+            "key": "general",
+            "label": "General",
+            "collapsible": true,
+            "children": [
+                {
+                    "type": "template",
+                    "name": "quad_custom_settings/general"
+                }
+            ]
+
+        },
+        {
+            "type": "dict",
+            "key": "hosts",
+            "label": "Hosts",
+            "collapsible": true,
+            "children": [
+                {
+                    "type": "template",
+                    "name": "quad_custom_settings/aftereffects"
+                },
+                {
+                    "type": "template",
+                    "name": "quad_custom_settings/nuke"
+                },
+                {
+                    "type": "template",
+                    "name": "quad_custom_settings/tvpaint"
+                },
+                {
+                    "type": "template",
+                    "name": "quad_custom_settings/photoshop"
+                }
+            ]
+        }
+    ]
+}

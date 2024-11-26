@@ -1,0 +1,96 @@
+[
+    {
+        "type": "dict",
+        "key": "tvpaint",
+        "label": "TvPaint",
+        "collapsible": true,
+        "children": [
+            {
+                "type": "dict",
+                "key": "publish",
+                "label": "Publish",
+                "collapsible": true,
+                "children": [
+                    {
+                        "type": "dict",
+                        "collapsible": true,
+                        "key": "ExtractPsd",
+                        "label": "Extract PSD",
+                        "is_group": true,
+                        "checkbox_key": "enabled",
+                        "children": [
+                            {
+                                "type": "boolean",
+                                "key": "enabled",
+                                "label": "Enabled"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "dict",
+                        "key": "ExtractJson",
+                        "label": "Extract JSON",
+                        "is_group": false,
+                        "checkbox_key": "enabled",
+                        "children": [
+                            {
+                                "type": "boolean",
+                                "key": "enabled",
+                                "label": "Enabled"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "dict",
+                        "key": "IntegrateKitsuSequence",
+                        "label": "Integrate Kitsu Sequence",
+                        "is_group": false,
+                        "checkbox_key": "enabled",
+                        "children": [
+                            {
+                                "type": "boolean",
+                                "key": "enabled",
+                                "label": "Enabled"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "dict",
+                "collapsible": true,
+                "key": "create",
+                "label": "Create",
+                "children": [
+                    {
+                        "type": "dict",
+                        "collapsible": true,
+                        "key": "create_json",
+                        "label": "Create Json",
+                        "is_group": true,
+                        "children": [
+                            {
+                                "type": "boolean",
+                                "key": "enabled",
+                                "label": "Enabled"
+                            },
+                            {
+                                "type": "text",
+                                "key": "default_variant",
+                                "label": "Default variant"
+                            },
+                            {
+                                "type": "list",
+                                "key": "default_variants",
+                                "label": "Default variants",
+                                "object_type": {
+                                    "type": "text"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
