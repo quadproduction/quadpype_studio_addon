@@ -7,8 +7,8 @@ from quadpype.modules import (
 )
 
 
-class QuadPyblishModule(QuadPypeModule, IPluginPaths):
-    name = "quadpyblish"
+class QuadStudioAddon(QuadPypeModule, IPluginPaths):
+    name = "quad_studio_addon"
     _valid_plugin_types = ["publish", "load", "create", "actions", "inventory", "builder"]
 
     def __init__(self, manager, settings):
@@ -93,11 +93,11 @@ class QuadPyblishModule(QuadPypeModule, IPluginPaths):
 class AddonSettingsDef(JsonFilesSettingsDef):
     # This will add prefixes to every schema and template from `schemas`
     #   subfolder.
-    # - it is not required to fill the prefix but it is highly
+    # - it is not required to fill the prefix, but it is highly
     #   recommended as schemas and templates may have name clashes across
     #   multiple addons
     # - it is also recommended that prefix has addon name in it
-    schema_prefix = "quad_custom_settings"
+    schema_prefix = "quad_studio_addon"
 
     def get_settings_root_path(self):
         """Implemented abstract class of JsonFilesSettingsDef.

@@ -1,7 +1,7 @@
 {
     "type": "dict",
-    "key": "quad_custom_settings",
-    "label": "Quad Custom Settings",
+    "key": "quad_studio_addon",
+    "label": "Quad Studio",
     "collapsible": true,
     "children": [
         {
@@ -12,7 +12,7 @@
             "children": [
                 {
                     "type": "template",
-                    "name": "quad_custom_settings/general"
+                    "name": "quad_studio_addon/general"
                 }
             ]
 
@@ -25,19 +25,19 @@
             "children": [
                 {
                     "type": "template",
-                    "name": "quad_custom_settings/aftereffects"
+                    "name": "quad_studio_addon/aftereffects"
                 },
                 {
                     "type": "template",
-                    "name": "quad_custom_settings/nuke"
+                    "name": "quad_studio_addon/nuke"
                 },
                 {
                     "type": "template",
-                    "name": "quad_custom_settings/tvpaint"
+                    "name": "quad_studio_addon/tvpaint"
                 },
                 {
                     "type": "template",
-                    "name": "quad_custom_settings/photoshop"
+                    "name": "quad_studio_addon/photoshop"
                 }
             ]
         }
