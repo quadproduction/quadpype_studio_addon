@@ -15,7 +15,7 @@ class QuadStudioAddon(QuadPypeModule, IPluginPaths):
         self._api = None
         self.settings = settings
         self._plugin_folders = {}
-        super(QuadPyblishModule, self).__init__(manager, settings)
+        super().__init__(manager, settings)
 
     def initialize(self, module_settings):
         self.enabled = True
