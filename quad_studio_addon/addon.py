@@ -90,7 +90,7 @@ class QuadStudioAddon(QuadPypeModule, IPluginPaths):
         return self.get_plugin_paths_by_hostnames_and_type([host_name, "common"], "builder")
 
 
-class AddonSettingsDef(JsonFilesSettingsDef):
+class QuadStudioAddonSettingsDef(JsonFilesSettingsDef):
     # This will add prefixes to every schema and template from `schemas`
     #   subfolder.
     # - it is not required to fill the prefix, but it is highly
