@@ -3,7 +3,7 @@
 If addon class or settings definition won't be here their definition won't
 be found by QuadPype discovery.
 """
-from .addon import QuadStudioAddon, QuadStudioAddonSettingsDef
+from quad_studio_addon.addon import QuadStudioAddon, QuadStudioAddonSettingsDef
 
 __all__ = (
     "QuadStudioAddon",
