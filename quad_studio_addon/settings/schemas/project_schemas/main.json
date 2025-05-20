@@ -16,30 +16,6 @@
                 }
             ]
 
-        },
-        {
-            "type": "dict",
-            "key": "hosts",
-            "label": "Hosts",
-            "collapsible": true,
-            "children": [
-                {
-                    "type": "template",
-                    "name": "quad_studio_addon/aftereffects"
-                },
-                {
-                    "type": "template",
-                    "name": "quad_studio_addon/nuke"
-                },
-                {
-                    "type": "template",
-                    "name": "quad_studio_addon/tvpaint"
-                },
-                {
-                    "type": "template",
-                    "name": "quad_studio_addon/photoshop"
-                }
-            ]
         }
     ]
 }
